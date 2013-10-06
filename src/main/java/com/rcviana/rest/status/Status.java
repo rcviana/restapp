@@ -7,7 +7,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * @author Robson Viana
- *
+ * @version 0.1
  */
 @Path("/v1/status/*")
 public class Status {
