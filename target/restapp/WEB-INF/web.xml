@@ -5,18 +5,23 @@
 <web-app>
   <display-name>restapp</display-name>
   
+  	<listener>
+    	<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+	</listener>    
+  
 	<servlet>
-		<servlet-name>Jersey Web Application</servlet-name>
-		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<servlet-name>jersey</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <init-param>
-            <param-name>javax.ws.rs.Application</param-name>
-            <param-value>restapp</param-value>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.rcviana.rest</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>	  
     
     <servlet-mapping>
-    	<servlet-name>Jersey Web Application</servlet-name>
-    	<url-pattern>/api/*</url-pattern>
+    	<servlet-name>jersey</servlet-name>
+    	<url-pattern>/*</url-pattern>
     </servlet-mapping>
     
 </web-app>
