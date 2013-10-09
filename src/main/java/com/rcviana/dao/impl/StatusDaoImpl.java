@@ -1,6 +1,9 @@
 package com.rcviana.dao.impl;
 
+import org.hibernate.Session;
+
 import com.rcviana.dao.StatusDao;
+import com.rcviana.persistance.HibernateUtil;
 import com.rcviana.qualifier.StatusQualifierDb;
 
 /**
@@ -12,6 +15,14 @@ import com.rcviana.qualifier.StatusQualifierDb;
 public class StatusDaoImpl implements StatusDao {
 
 	public String getStatusDB() {
-		return " 123...";
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		String statusDB = (String)session.createSQLQuery(
+				"SELECT TO_CHAR(sysdate, 'YYYY-MM-DD HH24:MI:SS') DATETIME " +
+				"FROM SYS.DUAL")
+				.uniqueResult();
+		
+		return statusDB;
 	}
 }

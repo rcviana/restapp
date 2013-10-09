@@ -5,9 +5,9 @@
 <web-app>
   <display-name>restapp</display-name>
   
-  	<listener>
+  	<!-- listener>
     	<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
-	</listener>    
+	</listener-->    
   
 	<servlet>
 		<servlet-name>jersey</servlet-name>
