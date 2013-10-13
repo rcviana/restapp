@@ -5,10 +5,6 @@
 <web-app>
   <display-name>restapp</display-name>
   
-  	<!-- listener>
-    	<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
-	</listener-->    
-  
 	<servlet>
 		<servlet-name>jersey</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -23,5 +19,5 @@
     	<servlet-name>jersey</servlet-name>
     	<url-pattern>/*</url-pattern>
     </servlet-mapping>
-    
+
 </web-app>

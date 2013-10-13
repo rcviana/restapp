@@ -1,5 +1,6 @@
 package com.rcviana.rest.status;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -14,6 +15,7 @@ import com.rcviana.qualifier.StatusQualifierDb;
  * @version 0.1
  */
 @Path("/v1/status/*")
+@ApplicationScoped
 public class Status {
 
 	private static final String VERSION = "0.1";

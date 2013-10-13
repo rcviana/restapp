@@ -1,5 +1,7 @@
 package com.rcviana.dao.impl;
 
+import java.sql.Timestamp;
+
 import org.hibernate.Session;
 
 import com.rcviana.dao.StatusDao;
@@ -18,11 +20,10 @@ public class StatusDaoImpl implements StatusDao {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		String statusDB = (String)session.createSQLQuery(
-				"SELECT TO_CHAR(sysdate, 'YYYY-MM-DD HH24:MI:SS') DATETIME " +
-				"FROM SYS.DUAL")
+		Timestamp sysdate = (Timestamp)session.createSQLQuery(
+				"SELECT SYSDATE();")
 				.uniqueResult();
 		
-		return statusDB;
+		return sysdate.toString();
 	}
 }
